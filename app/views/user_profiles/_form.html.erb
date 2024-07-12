@@ -1,0 +1,41 @@
+<%= form_with model: @user_profile	do |form| %>
+	<div >
+		<%= form.label :first_name %>
+		<%= form.text_field :first_name %>
+		<% @user_profile.errors.full_messages_for(:first_name).each do |message| %>
+			<div><%= message %></div>
+		<% end %>
+	</div>
+
+	<div> 
+		<%= form.label :last_name %>
+		<%= form.text_field :last_name %>
+
+		<% @user_profile.errors.full_messages_for(:last_name).each do |message| %>
+			<div><%= message %></div>
+		<% end %>
+	</div>
+
+	<div>
+		<%= form.label :phone_number %>
+		<%= form.text_field :phone_number %>
+		<% @user_profile.errors.full_messages_for(:phone_number).each do |message| %>
+			<div><%= message %></div>
+		<% end %>
+	</div>
+
+	<div>
+		<%= form.label :address %>
+		<%= form.text_field :address %>
+		<% @user_profile.errors.full_messages_for(:address).each do |message| %>
+			<div><%= message %></div>
+		<% end %>
+	</div>
+
+	<div>
+		<%= form.submit class:"btn btn-warning" %>
+	</div>
+<% end %>
+
+
+

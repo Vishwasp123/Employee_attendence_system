@@ -1,0 +1,47 @@
+<h2>USER PROFILE</h2>
+<%= link_to "Create User Profile", new_user_profile_path %>
+	
+<table>
+  <tr>
+  	<th>Id</th>
+    <th>FIRST NAME</th>
+    <th>LAST NAME</th>
+    <th>PHONE NUMBER</th>
+    <th>ADDRESS</th>
+    <th>ACTION</th>
+  </tr>
+  <% @user_profiles.each do |profile| %>
+	  <tr>
+	  	<td><%= profile.id %></td>
+	    <td><%= profile.first_name %></td>
+	    <td><%= profile.last_name %></td>
+	    <td><%= profile.phone_number %></td>
+	    <td><%= profile.address %></td>
+	    <td>
+	    	<ul>
+				  <li><%= link_to "Edit", edit_user_profile_path(profile)  %>
+				  <%= link_to "Destroy", user_profile_path(profile), data: { turbo_method: :delete,turbo_confirm: "Are you sure?"} %> <%= link_to "show",user_profile_path(profile) %></li> 	
+				</ul>
+			</td>
+	  </tr>
+	<% end %> 
+</table>
+
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style
+
