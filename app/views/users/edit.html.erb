@@ -1,0 +1,47 @@
+<div class="flex-column">
+  <div class="card shadow" style="max-width: 36rem;">
+    <div class="card-header">
+      <h2 class="text-center">Edit Employee</h2>
+    </div>
+    <div class="card-body">
+      <% if flash[:errors] %>
+        <% flash[:errors].each do |error| %>
+          <p class="text-danger"><%= error %></p>
+        <% end %>
+      <% end %>
+      
+      <%= form_with(model: @user, local: true, method: :patch, url: user_path(@user)) do |f| %>
+        <%= f.label :name, "Employee Name:" %>
+        <%= f.text_field :name, placeholder: "Enter Employee's Name", class: "form-control mb-3", required: true %>
+
+        <%= f.label :user_name, "Username:" %>
+        <%= f.text_field :user_name, placeholder: "Enter Username", class: "form-control mb-3", required: true %>
+
+        <%= f.label :email, "Email:" %>
+        <%= f.email_field :email, placeholder: "Enter Email Address", class: "form-control mb-3", required: true %>
+
+        <%= f.label :phone_number, "Phone Number:" %>
+        <%= f.text_field :phone_number, type: "tel", placeholder: "Enter Phone Number", class: "form-control mb-3" %>
+
+        <div class="form-group">
+          <%= f.label :gender, "Gender:" %><br>
+          <div class="form-check form-check-inline">
+            <%= f.radio_button :gender, "male", class: "form-check-input", required: true %>
+            <%= f.label :gender_male, "Male", class: "form-check-label" %>
+          </div>
+          <div class="form-check form-check-inline">
+            <%= f.radio_button :gender, "female", class: "form-check-input", required: true %>
+            <%= f.label :gender_female, "Female", class: "form-check-label" %>
+          </div>
+        </div>
+
+        <div class="form-check">
+          <%= f.check_box :active, class: "form-check-input" %>
+          <%= f.label :active, "Active", class: "form-check-label" %>
+        </div>
+
+        <%= f.submit "Update Employee", class: "btn btn-primary mt-3" %>
+      <% end %>
+    </div>
+  </div>
+</div>
