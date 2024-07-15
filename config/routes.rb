@@ -10,4 +10,8 @@ Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   get "up" => "rails/health#show", as: :rails_health_check
+
+  # Defines the root path route ("/")
+  root "user_profiles#index"
+  resources :user_profiles
 end
