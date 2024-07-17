@@ -1,0 +1,7 @@
+<div class="container mt-5">
+  <h1><%= @warehouse.name %></h1>
+  <p><%= @warehouse.address %></p>
+  <p><%= @warehouse.latitude %>, <%= @warehouse.longitude %></p>
+  <%= link_to 'Edit', edit_warehouse_path(@warehouse), class: 'btn btn-warning' %>
+  <%= link_to 'Back', warehouses_path, class: 'btn btn-secondary' %>
+</div>

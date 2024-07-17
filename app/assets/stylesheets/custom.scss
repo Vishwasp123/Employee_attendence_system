@@ -1,0 +1,38 @@
+.card {
+  border-radius: 10px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  &:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  }
+}
+
+.card-body {
+  padding: 1.5rem;
+}
+
+.card-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.card-text {
+  font-size: 1rem;
+  color: #6c757d;
+}
+
+.btn {
+  margin-right: 0.5rem;
+}
+
+.container {
+  max-width: 1200px;
+}
+
+.navbar {
+  background-color: #343a40;
+}
+
+.navbar-brand, .nav-link {
+  color: #fff !important;
+}

@@ -1,0 +1,21 @@
+<div class="container mt-5">
+  <h1 class="mb-4">Warehouses</h1>
+  <%= link_to 'New Warehouse', new_warehouse_path, class: 'btn btn-primary mb-3' %>
+  <div class="row">
+    <% @warehouses.each do |warehouse| %>
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title"><%= warehouse.name %></h5>
+            <p class="card-text"><%= warehouse.address %></p>
+            <div class="mt-auto">
+              <%= link_to 'Show', warehouse, class: 'btn btn-secondary btn-sm' %>
+              <%= link_to 'Edit', edit_warehouse_path(warehouse), class: 'btn btn-warning btn-sm' %>
+              <%= link_to 'Destroy', warehouse, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm' %>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

@@ -20,6 +20,7 @@ gem "importmap-rails"
 gem "byebug"
 gem 'bcrypt', '~> 3.1.7'
 gem "sassc-rails"
+gem 'geocoder'
 
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
 gem "turbo-rails"

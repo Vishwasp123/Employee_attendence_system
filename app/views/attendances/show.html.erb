@@ -1,0 +1,8 @@
+<div class="container mt-5">
+  <h1>Attendance</h1>
+  <p>Check-in Time: <%= @attendance&.check_in_time&.strftime("%Y-%m-%d %T") %></p>
+  <p>Check-out Time: <%= @attendance&.check_out_time&.strftime("%Y-%m-%d %T") %></p>
+  <p>Location: <%= @attendance.latitude %>, <%= @attendance.longitude %></p>
+  <%= link_to 'Edit', edit_warehouse_attendance_path(@warehouse, @attendance), class: 'btn btn-warning' %>
+  <%= link_to 'Back', warehouse_attendances_path(@warehouse), class: 'btn btn-secondary' %>
+</div>
